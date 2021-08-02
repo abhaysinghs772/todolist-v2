@@ -14,12 +14,15 @@ app.use(express.static("public"));
 const urlDb= process.env.URL
 mongoose.connect(urlDb, { useNewUrlParser: true });
 
+// creating schema
 const itemSchema = {
     name: String
 }
 
+// creating model
 const Item = mongoose.model("Item", itemSchema);
 
+// creacting document
 const item1 = new Item({
     name: "welcome to your todolist!"
 });
